@@ -103,7 +103,7 @@ README.md
 - 两种实现的 `State`、Tool、测试和 Trace 有什么差异。
 - 为什么没有同时维护多套完整项目。
 
-可参考：[Agent 工程框架对比与选择](../07-framework-comparison.md#7-面试中如何回答框架选型)。
+可参考：[Agent 工程框架对比与选择](../07-framework-comparison.md#8-面试中如何回答框架选型)。
 
 ## 五、90 秒项目介绍
 

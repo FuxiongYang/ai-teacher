@@ -536,3 +536,21 @@ intake
 ```
 
 这时宁可少做功能，也要保留评测和测试。一个功能少但验证充分的 Agent（智能体）项目，比功能很多但只能现场演示一次的项目更适合面试。
+
+## 6. 后续补充周：Go AI Agent 生态梳理
+
+完成 14 天主线后，如果目标岗位偏 Go 后端、AI 平台、云原生服务或企业内部 Agent 平台，可以再增加一周：[Go AI Agent 生态补充周](./08-go-agent-ecosystem-week.md)。
+
+这一周不重写完整项目，只梳理 Go 生态并做最小对照：
+
+```text
+第 1 天：Go Agent 生态地图和框架选型
+第 2 天：Go 中的模型调用和结构化输出
+第 3 天：Tool Calling 和工具契约
+第 4 天：Workflow、State 和 Graph
+第 5 天：RAG、Memory 和 MCP
+第 6 天：测试、评测、Trace 和安全
+第 7 天：选型报告和面试表达
+```
+
+推荐默认主线是 `Eino`，同时理解 `OpenAI Go SDK` 和 `MCP Go SDK` 的底层能力。`Google ADK for Go`、`tRPC-Agent-Go`、`LangChainGo`、`Genkit Go` 和 `Microsoft Agent Framework for Go` 按目标岗位选择阅读，不建议同时动手重写多套实现。

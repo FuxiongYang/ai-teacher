@@ -206,13 +206,27 @@ Google ADK + Gemini/Vertex AI 方向资料
   -> 比较实现复杂度、可测试性、可恢复性和 Trace
 ```
 
-## 7. 面试中如何回答框架选型
+## 7. Go 生态后续学习
+
+Go 生态不建议塞进前 14 天主线。完成 Python 主线后，可以单独用一周梳理，见：[Go AI Agent 生态补充周](./08-go-agent-ecosystem-week.md)。
+
+建议判断方式：
+
+- `Eino`：作为 Go Agent 主线，重点看 Agent、Tool、Graph、Workflow、RAG 和 Trace。
+- `OpenAI Go SDK`：作为底层模型调用 SDK，不等同于完整 Agent Framework。
+- `MCP Go SDK`：作为 MCP Client / Server 和 Tool 协议能力，不等同于 Agent Runtime。
+- `Google ADK for Go`、`tRPC-Agent-Go`、`Genkit Go`、`Microsoft Agent Framework for Go`：按目标岗位和云生态选择。
+- `LangChainGo`：适合理解经典 Chain、Agent、Tool、Retriever 抽象，但不建议作为本周唯一主线。
+
+面试中可以把 Go 生态作为“后续扩展能力”表达：同一套 `Tool`、`State`、`Eval`、`Trace` 边界可以迁移到 Go，只是具体框架和工程组织不同。
+
+## 8. 面试中如何回答框架选型
 
 可以用下面的结构回答：
 
 > 我用 OpenAI Agents SDK 快速完成了单 Agent、Tool Calling、结构化输出、评测和 Trace 的主流程，因为它的抽象较少，适合快速验证业务闭环。对于需要显式状态、暂停恢复和人工审批的流程，我用 LangGraph 做过同一段 Workflow 的局部重写。对于 RAG 场景，我会重点比较 LlamaIndex 的数据和检索抽象；如果项目更重视 Python 类型安全和 Mock 测试，则会考虑 PydanticAI。最终选择不是看框架名称，而是看状态边界、工具权限、评测方式和运行可观测性。
 
-## 8. 官方学习入口
+## 9. 官方学习入口
 
 - [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/)
 - [OpenAI Agents SDK Tools](https://openai.github.io/openai-agents-python/tools/)
@@ -221,3 +235,6 @@ Google ADK + Gemini/Vertex AI 方向资料
 - [LlamaIndex Agents](https://developers.llamaindex.ai/python/framework/understanding/agent/)
 - [PydanticAI Agents](https://ai.pydantic.dev/agents/)
 - [Google Agent Development Kit](https://google.github.io/adk-docs/)
+- [Eino](https://www.cloudwego.io/docs/eino/)
+- [OpenAI Go SDK](https://github.com/openai/openai-go)
+- [MCP Go SDK](https://github.com/modelcontextprotocol/go-sdk)

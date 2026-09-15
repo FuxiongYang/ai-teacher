@@ -65,7 +65,32 @@
 
 不要为每个框架各做一套项目。详细选型和局部实践方式见：[Agent 工程框架对比与选择](./07-framework-comparison.md)。
 
-## 4. MCP
+## 4. Go Agent 生态
+
+Go 生态建议放在 14 天主线之后集中梳理，不要和 Python 主线并行展开。详细执行计划见：[Go AI Agent 生态补充周](./08-go-agent-ecosystem-week.md)。
+
+| 项目 | 定位 | 建议 |
+|---|---|---|
+| [Eino](https://www.cloudwego.io/docs/eino/) | Go AI 应用和 Agent Framework | 作为 Go 主线重点看 |
+| [Google ADK for Go](https://github.com/google/adk-go) | Google ADK 的 Go 实现 | 目标岗位有 `Gemini` / `Vertex AI` 再深入 |
+| [tRPC-Agent-Go](https://trpc-group.github.io/trpc-agent-go/) | tRPC 生态 Agent 框架 | 偏企业服务化、MCP 和 OpenTelemetry |
+| [LangChainGo](https://github.com/tmc/langchaingo) | LangChain 的 Go 实现 | 了解 Chain、Agent、Tool、Retriever 经典抽象 |
+| [Genkit Go](https://genkit.dev/docs/go/get-started/) | Go AI App Framework | 了解后端 AI 应用、RAG、Testing 和 Evaluation |
+| [Microsoft Agent Framework for Go](https://github.com/microsoft/agent-framework-go) | Microsoft Agent Framework 的 Go SDK | 目标岗位偏 Azure / Foundry 再深入 |
+| [OpenAI Go SDK](https://github.com/openai/openai-go) | OpenAI 官方 Go SDK | 作为底层模型调用和 Tool Calling 能力 |
+| [MCP Go SDK](https://github.com/modelcontextprotocol/go-sdk) | MCP 官方 Go SDK | 用于 MCP Client / Server 和 Tool 协议接入 |
+
+一周内只建议动手：
+
+```text
+Eino 最小 Agent / Workflow
+  + OpenAI Go SDK 底层调用理解
+  + MCP Go SDK 最小只读 Tool
+```
+
+其他框架只做选型阅读，避免把 Go 生态梳理变成 API 横跳。
+
+## 5. MCP
 
 - [Model Context Protocol Introduction](https://modelcontextprotocol.io/introduction)
 - [Model Context Protocol Specification](https://modelcontextprotocol.io/specification)
@@ -79,7 +104,7 @@
 
 短期只需要完成一个 Tool（工具）的接入，不需要把协议规范全部背下来。
 
-## 5. RAG 和证据
+## 6. RAG 和证据
 
 重点不是先选向量数据库，而是理解：
 
@@ -101,7 +126,7 @@
 
 如果项目数据量很小，关键词检索已经足够支撑面试 Demo（演示）。
 
-## 6. 评测和质量
+## 7. 评测和质量
 
 建议优先搜索和阅读这些主题：
 
@@ -121,7 +146,7 @@
 - 能否定位到具体 Trace？
 - 适不适合作为 CI 门禁？
 
-## 7. 安全
+## 8. 安全
 
 建议了解：
 
@@ -143,7 +168,7 @@
 - 对敏感信息脱敏。
 - 保存审计 Trace（审计轨迹）。
 
-## 8. 工程查漏补缺
+## 9. 工程查漏补缺
 
 只在项目需要时补下面内容：
 
@@ -157,7 +182,7 @@
 | 评测难以自动化 | pytest、JSONL、报告生成 |
 | 本地环境不一致 | Docker、配置和依赖锁定 |
 
-## 9. 框架选择建议
+## 10. 框架选择建议
 
 ### 默认路线
 

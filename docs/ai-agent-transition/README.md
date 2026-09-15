@@ -63,6 +63,7 @@
 - [学习记录模板](./05-learning-log.md)：每天记录进度、问题、实验和评测结果。
 - [资源地图](./06-resource-map.md)：按任务组织的官方资料和本地已有笔记。
 - [Agent 工程框架对比与选择](./07-framework-comparison.md)：保留 OpenAI Agents SDK，并补充 LangGraph、LlamaIndex、PydanticAI 和 Google ADK 的学习路径。
+- [Go AI Agent 生态补充周](./08-go-agent-ecosystem-week.md)：在 14 天主线之后，用一周梳理 Go Agent 框架、SDK、MCP 和工程选型。
 - [14 天日学习文档](./daily/README.md)：每天一份可直接照着执行的学习材料。
 
 ## 4. 中英术语速查
@@ -146,6 +147,16 @@ OpenAI Agents SDK 继续作为默认主线，保证两周内可以完成项目�
 - `Google ADK`：只有在目标岗位明确使用 `Gemini`、`Vertex AI` 或 `Google Cloud` 时才纳入核心实践。
 
 不要同时重写四套项目。统一输入、Tool Schema、State、Evidence 和 Golden Case，只替换一个局部实现，才能看出框架差异并控制学习成本。具体对比见：[Agent 工程框架对比与选择](./07-framework-comparison.md)。
+
+### 6.5 Go 生态放在主线之后梳理
+
+如果后续想做 Go 方向的 Agent 工程，可以在 14 天主线之后增加一周：[Go AI Agent 生态补充周](./08-go-agent-ecosystem-week.md)。这一周不重写完整项目，只做：
+
+- `Eino` 最小 Agent / Workflow Demo。
+- `OpenAI Go SDK` 底层模型调用理解。
+- `MCP Go SDK` 工具协议理解。
+- `Google ADK for Go`、`tRPC-Agent-Go`、`LangChainGo`、`Genkit Go`、`Microsoft Agent Framework for Go` 的选型对比。
+- 一份面试可用的 Go 生态判断材料。
 
 ## 7. 完成标准
 
