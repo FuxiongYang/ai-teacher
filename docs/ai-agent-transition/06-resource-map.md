@@ -33,7 +33,39 @@
 - 不需要第一天就通读整个 SDK。
 - 先围绕最小工具调用和 Trace 找示例。
 
-## 3. MCP
+## 3. Agent 工程框架
+
+这部分不是要求全部实战，而是帮助你根据目标岗位选择一个替代框架。两周时间优先完成 OpenAI Agents SDK 主线，再做一个局部对照实验。
+
+| Framework | 适合重点 | 本路线建议 |
+|---|---|---|
+| OpenAI Agents SDK | Tool Calling、Guardrail、Handoff、Tracing、Testing | 默认主线，完成第 1～14 天 |
+| LangGraph | State Graph、持久化、暂停恢复、人工介入 | 优先重写第 5 天的 Workflow |
+| LlamaIndex | 数据接入、检索、RAG、Agent、Workflow | 优先重写第 6 天的 RAG |
+| PydanticAI | Python 类型安全、结构化输出、依赖注入、测试 | 用于第 1～2 天或第 9 天 |
+| Google ADK | Agent、Tool 和 Google/Gemini 生态 | 有 Google Cloud 目标岗位再深入 |
+
+官方入口：
+
+- [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/)
+- [LangGraph Overview](https://docs.langchain.com/oss/python/langgraph/overview)
+- [LlamaIndex Agents](https://developers.llamaindex.ai/python/framework/understanding/agent/)
+- [PydanticAI Agents](https://ai.pydantic.dev/agents/)
+- [Google Agent Development Kit](https://google.github.io/adk-docs/)
+
+学习时统一以下边界：
+
+```text
+相同输入
+  -> 相同 Tool Schema
+  -> 相同 State / Evidence 约束
+  -> 相同 Golden Case
+  -> 比较流程表达、测试难度、恢复能力和 Trace
+```
+
+不要为每个框架各做一套项目。详细选型和局部实践方式见：[Agent 工程框架对比与选择](./07-framework-comparison.md)。
+
+## 4. MCP
 
 - [Model Context Protocol Introduction](https://modelcontextprotocol.io/introduction)
 - [Model Context Protocol Specification](https://modelcontextprotocol.io/specification)
@@ -47,7 +79,7 @@
 
 短期只需要完成一个 Tool（工具）的接入，不需要把协议规范全部背下来。
 
-## 4. RAG 和证据
+## 5. RAG 和证据
 
 重点不是先选向量数据库，而是理解：
 
@@ -69,7 +101,7 @@
 
 如果项目数据量很小，关键词检索已经足够支撑面试 Demo（演示）。
 
-## 5. 评测和质量
+## 6. 评测和质量
 
 建议优先搜索和阅读这些主题：
 
@@ -89,7 +121,7 @@
 - 能否定位到具体 Trace？
 - 适不适合作为 CI 门禁？
 
-## 6. 安全
+## 7. 安全
 
 建议了解：
 
@@ -111,7 +143,7 @@
 - 对敏感信息脱敏。
 - 保存审计 Trace（审计轨迹）。
 
-## 7. 工程查漏补缺
+## 8. 工程查漏补缺
 
 只在项目需要时补下面内容：
 
@@ -125,22 +157,29 @@
 | 评测难以自动化 | pytest、JSONL、报告生成 |
 | 本地环境不一致 | Docker、配置和依赖锁定 |
 
-## 8. 框架选择建议
+## 9. 框架选择建议
 
-短周期内不要同时深入多个框架。选择标准：
+### 默认路线
 
-- 官方文档能快速跑通。
-- 工具调用和结构化输出简单。
-- 能记录 Trace。
-- 能被测试代码控制。
-- 面试岗位中有一定出现频率。
+如果没有明确的目标岗位，使用：
 
-如果项目目标是快速完成：
+```text
+OpenAI Agents SDK + pytest
+```
 
-- 先选一个轻量 Agent SDK（智能体开发工具包）。
-- Workflow（工作流）复杂后再考虑状态图框架。
-- MCP 单独做最小接入。
-- 把框架代码包在自己的 `Agent`、`Tool`、`State` 和 `Eval` 边界内。
+先完成工具、状态、RAG、评测、安全和 Trace 的闭环。第 5 天阅读 LangGraph，第 6 天阅读 LlamaIndex，最后只选择一个框架做局部重写。
+
+### 按岗位选择
+
+| 目标方向 | 优先框架 | 建议落点 |
+|---|---|---|
+| 通用 Agent 应用 | OpenAI Agents SDK | 完成完整 14 天主线 |
+| 长流程、审批、后台任务 | LangGraph | 重写第 5 天 |
+| RAG、知识库、数据 Agent | LlamaIndex | 重写第 6 天 |
+| Python Agent 测试和结构化业务 | PydanticAI | 重写第 1～2 天或第 9 天 |
+| Gemini、Vertex AI、Google Cloud | Google ADK | 做最小 Agent + Tool Demo |
+
+### 选型时要回答的问题
 
 面试时最重要的不是背框架 API（应用程序接口），而是能解释：
 

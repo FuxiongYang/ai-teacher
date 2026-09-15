@@ -94,6 +94,17 @@ README.md
 - 检索证据不足但输出了高置信度结论。
 - Prompt Injection 试图绕过审批。
 
+## 框架选型表达
+
+准备一个 30 秒的框架选型回答，不要只说“这个框架比较流行”。至少说明：
+
+- 为什么用 `OpenAI Agents SDK` 完成主线。
+- 为什么用 `LangGraph` 或 `LlamaIndex` 做局部替代实践。
+- 两种实现的 `State`、Tool、测试和 Trace 有什么差异。
+- 为什么没有同时维护多套完整项目。
+
+可参考：[Agent 工程框架对比与选择](../07-framework-comparison.md#7-面试中如何回答框架选型)。
+
 ## 五、90 秒项目介绍
 
 按下面顺序表达：
@@ -229,4 +240,3 @@ README.md
 - [面试准备与项目表达](../04-interview-prep.md)
 - [项目规格](../02-project-spec.md)
 - [Agent 评测与测试方案](../03-agent-evaluation-and-testing.md)
-

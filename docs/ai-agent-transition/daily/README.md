@@ -20,6 +20,20 @@
 4. 当天没有完成“完成标准”时，不要急着进入下一天。
 5. 参考资料只阅读当天对应的章节，不需要从头通读所有框架文档。
 
+## 框架学习方式
+
+本路线保留 `OpenAI Agents SDK` 作为默认主线，因为它适合在短时间内完成一个可运行、可测试、可评测的项目。其他框架作为局部替代实践，不要求全部掌握：
+
+| 目标 | 推荐框架 | 对应日期 |
+|---|---|---|
+| 快速完成通用 Agent 项目 | OpenAI Agents SDK | 第 1～14 天 |
+| 强化 Workflow、State、Checkpoint 和审批 | LangGraph | 第 5 天 |
+| 强化 RAG、数据接入和证据检索 | LlamaIndex | 第 6 天 |
+| 强化 Python 类型安全和测试 | PydanticAI | 第 1～2 天或第 9 天 |
+| 目标岗位使用 Gemini / Google Cloud | Google ADK | 第 1 天预览或单独做小 Demo |
+
+建议只选择一个替代框架做局部重写，并复用相同的输入、Tool Schema、State、Evidence 和 Golden Case。不要为了“覆盖框架”而把 14 天项目重复搭建多遍。完整对比见：[Agent 工程框架对比与选择](../07-framework-comparison.md)。
+
 ## 每日文档
 
 - [第 1 天：最小 Agent 闭环与模型调用](./day-01-agent-basics.md)
@@ -81,4 +95,3 @@ projects/ci-failure-agent/
 | 第 12 天 | TODO | 安全测试矩阵 |
 | 第 13 天 | TODO | 3 个端到端演示 |
 | 第 14 天 | TODO | README、架构图和面试材料 |
-

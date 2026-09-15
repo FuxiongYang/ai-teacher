@@ -62,6 +62,7 @@
 - [面试准备与项目表达](./04-interview-prep.md)：高频问题、项目介绍、简历要点和面试检查表。
 - [学习记录模板](./05-learning-log.md)：每天记录进度、问题、实验和评测结果。
 - [资源地图](./06-resource-map.md)：按任务组织的官方资料和本地已有笔记。
+- [Agent 工程框架对比与选择](./07-framework-comparison.md)：保留 OpenAI Agents SDK，并补充 LangGraph、LlamaIndex、PydanticAI 和 Google ADK 的学习路径。
 - [14 天日学习文档](./daily/README.md)：每天一份可直接照着执行的学习材料。
 
 ## 4. 中英术语速查
@@ -134,6 +135,17 @@
 ### 6.3 让工程基础服务于项目
 
 Python、异步、数据库、Docker 和 CI 只在项目遇到问题时查漏补缺。当前阶段不安排单独的基础课程，避免学习路线再次膨胀。
+
+### 6.4 保留主线，增加一个替代框架视角
+
+OpenAI Agents SDK 继续作为默认主线，保证两周内可以完成项目闭环。为了补充 Agent 工程视野，不需要把所有框架都学一遍，只选择一个与目标岗位最相关的替代框架做局部实践：
+
+- `LangGraph`：优先用于第 5 天的 `Workflow`、`State`、`Checkpoint` 和人工审批。
+- `LlamaIndex`：优先用于第 6 天的 RAG、文档数据和证据检索。
+- `PydanticAI`：优先用于第 1～2 天的结构化输出，或第 9 天的类型安全测试。
+- `Google ADK`：只有在目标岗位明确使用 `Gemini`、`Vertex AI` 或 `Google Cloud` 时才纳入核心实践。
+
+不要同时重写四套项目。统一输入、Tool Schema、State、Evidence 和 Golden Case，只替换一个局部实现，才能看出框架差异并控制学习成本。具体对比见：[Agent 工程框架对比与选择](./07-framework-comparison.md)。
 
 ## 7. 完成标准
 

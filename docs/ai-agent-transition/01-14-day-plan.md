@@ -466,7 +466,16 @@ intake
 
 ## 4. 第三周可选增强
 
-如果还有 7 天，不再横向学习多个框架，优先做下面内容：
+如果还有 7 天，先完成一个替代框架的局部实践，再做下面的工程增强。不要同时深入多个框架；具体选择见：[Agent 工程框架对比与选择](./07-framework-comparison.md)。
+
+推荐的局部实践：
+
+- 偏流程、审批和后台任务：用 `LangGraph` 重写第 5 天。
+- 偏 RAG、知识库和数据 Agent：用 `LlamaIndex` 重写第 6 天。
+- 偏 Python 类型安全和 Agent 测试：用 `PydanticAI` 重写第 1～2 天或第 9 天。
+- 偏 `Gemini`、`Vertex AI` 和 `Google Cloud`：用 `Google ADK` 做一个最小 Agent + Tool Demo。
+
+替代实现必须复用同一批输入、Tool Schema、State、Evidence 和 Golden Case，保留 `OpenAI Agents SDK` 版本作为对照。
 
 ### 第 15 天：接一个真实数据源
 

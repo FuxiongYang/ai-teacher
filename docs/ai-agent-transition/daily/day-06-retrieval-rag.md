@@ -59,13 +59,28 @@ version
 
 1. [OpenAI Retrieval](https://developers.openai.com/api/docs/guides/retrieval)：理解检索增强的基本流程。
 2. [OpenAI Agents SDK Tools](https://openai.github.io/openai-agents-python/tools/)：了解如何把检索封装成 Tool。
-3. 回看 [项目规格：State Schema](../02-project-spec.md#8-state-schema状态结构)。
+3. [LlamaIndex Agents](https://developers.llamaindex.ai/python/framework/understanding/agent/)：作为替代实现，理解数据、检索和 Agent 的组合方式。
+4. 回看 [项目规格：State Schema](../02-project-spec.md#8-state-schema状态结构)。
 
 阅读时重点关注：
 
 - 检索结果如何保留来源。
 - 召回内容如何进入模型上下文。
 - 如何避免把检索结果当成系统指令。
+
+### 框架实践选择
+
+默认使用 `OpenAI Agents SDK`，把本地检索封装为一个只读 Tool。若目标岗位偏 RAG 或知识库，可以用 `LlamaIndex` 做一个局部替代实现：
+
+```text
+文档加载
+  -> 索引或检索
+  -> Evidence Schema
+  -> Agent 上下文
+  -> 带 evidence_id 的诊断结果
+```
+
+两种实现共用同一批故障数据和证据引用测试。今天重点比较召回结果的来源保留、证据注入边界和评测方式，不需要学习所有数据连接器。
 
 ## 三、准备本地数据
 
@@ -205,5 +220,5 @@ search_diff(service, since, until)
 
 - [OpenAI Retrieval](https://developers.openai.com/api/docs/guides/retrieval)
 - [OpenAI Agents SDK Tools](https://openai.github.io/openai-agents-python/tools/)
+- [LlamaIndex Agents](https://developers.llamaindex.ai/python/framework/understanding/agent/)
 - [项目规格：工具设计](../02-project-spec.md#7-工具设计)
-

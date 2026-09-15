@@ -75,11 +75,16 @@ UNKNOWN
 
 ## 二、阅读顺序
 
-只阅读下面内容，不要扩展到 Agent Framework 对比：
+主线只阅读下面内容；只有在目标岗位或个人方向明确时，才选择一个替代框架快速浏览：
 
 1. [OpenAI Agents SDK Agents](https://openai.github.io/openai-agents-python/agents/)：理解 Agent 的组成。
 2. [OpenAI Agents SDK 官方文档](https://openai.github.io/openai-agents-python/)：跑一遍最小示例。
 3. [Pydantic Models](https://docs.pydantic.dev/latest/concepts/models/)：了解如何定义结果对象。
+
+可选替代入口：
+
+- [PydanticAI Agents](https://ai.pydantic.dev/agents/)：如果目标是 Python 类型安全、结构化输出和可测试 Agent。
+- [Google Agent Development Kit](https://google.github.io/adk-docs/)：如果目标岗位使用 `Gemini`、`Vertex AI` 或 `Google Cloud`。
 
 阅读时重点回答：
 
@@ -216,4 +221,5 @@ def classify_failure(
 - [OpenAI Agents SDK Agents](https://openai.github.io/openai-agents-python/agents/)
 - [OpenAI Agents SDK 官方文档](https://openai.github.io/openai-agents-python/)
 - [Pydantic Models](https://docs.pydantic.dev/latest/concepts/models/)
-
+- [PydanticAI Agents](https://ai.pydantic.dev/agents/)
+- [Google Agent Development Kit](https://google.github.io/adk-docs/)

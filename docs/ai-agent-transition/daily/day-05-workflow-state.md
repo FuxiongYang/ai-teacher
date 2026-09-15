@@ -65,15 +65,30 @@ WAITING_APPROVAL
 ## 二、阅读顺序
 
 1. [Agent Harness 本地笔记](../../agent-engineering-react-to-agent-harness-summary.md)：重点读 State、View、Control、Approval 和 Artifact。
-2. [LangGraph Overview](https://docs.langchain.com/oss/python/langgraph/overview)：理解 State Graph、持久化和人工介入。
-3. 回看 [项目规格：Workflow](../02-project-spec.md#5-workflow工作流)。
-4. 回看 [项目规格：State Schema](../02-project-spec.md#8-state-schema状态结构)。
+2. [OpenAI Agents SDK Tracing](https://openai.github.io/openai-agents-python/tracing/)：理解主线实现如何记录一次 Run。
+3. [LangGraph Overview](https://docs.langchain.com/oss/python/langgraph/overview)：作为替代实现，理解 State Graph、持久化和人工介入。
+4. 回看 [项目规格：Workflow](../02-project-spec.md#5-workflow工作流)。
+5. 回看 [项目规格：State Schema](../02-project-spec.md#8-state-schema状态结构)。
 
 阅读后写下：
 
 - 哪些字段属于 State？
 - 哪些字段只是 UI View？
 - 哪些操作应该通过 Control 命令进入 Runtime？
+
+### 框架实践选择
+
+默认使用 `OpenAI Agents SDK` 完成今天的状态和流程设计；如果希望补充替代框架，只重写下面这段最小流程：
+
+```text
+CLASSIFYING
+  -> COLLECTING_EVIDENCE
+  -> DIAGNOSING
+  -> DRAFTING_BUG
+  -> WAITING_APPROVAL
+```
+
+用 `LangGraph` 表达时，重点观察 State、节点、边、暂停和恢复；不要为了学习 API 而同时维护两套完整项目。输入、工具返回值、输出 Schema 和测试样例保持不变，才能比较框架差异。
 
 ## 三、设计 Workflow
 
@@ -248,6 +263,6 @@ resume(run_id)
 ## 参考资料
 
 - [Agent Harness 本地笔记](../../agent-engineering-react-to-agent-harness-summary.md)
+- [OpenAI Agents SDK Tracing](https://openai.github.io/openai-agents-python/tracing/)
 - [LangGraph Overview](https://docs.langchain.com/oss/python/langgraph/overview)
 - [项目规格：Workflow 和 State](../02-project-spec.md)
-
